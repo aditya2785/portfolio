@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditya Jha | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="icon" type="image/png" href="images/15396074.webp">
+</head>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Aditya Jha</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Hi, I'm <span class="name">Aditya Jha</span></h1>
+      <h2><span class="highlight">Data Scientist</span></h2>
+      <p>
+        I specialize in building AI-powered apps, full-stack projects, and 
+        data-driven solutions to solve real-world problems.
+      </p>
+      <div class="buttons">
+        <a href="#contact" class="btn primary">Hire Me</a>
+
+        <a href="mailto:24f2005506@ds.study.iitm.ac.in" class="btn secondary">Let's Talk</a>
+      </div>
+     <div class="socials">
+  <a href="https://twitter.com/yourusername" target="_blank">
+    <img src="images/twitter-logo-icon-free-png.webp" alt="Twitter">
+  </a>
+  <a href="https://github.com/aditya2785" target="_blank">
+    <img src="images/github-icon-1-logo.webp" alt="GitHub">
+  </a>
+  <a href="" target="_blank">
+    <img src="images/linkedin.png" alt="LinkedIn">
+  </a>
+</div>
+
+    </div>
+
+    <div class="hero-img">
+      <img src="images/6134309172934727070.jpg" alt="Aditya Jha">
+    </div>
+  </section>
+
+
+
+   <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <div class="about-image">
+        <img src="images/6170356442608026792.jpg" alt="Aditya Jha">
+      </div>
+      <div class="about-text">
+        <p>Hello! 👋 I’m <strong>Aditya Jha</strong>, a Data Science and Programming student at IIT Madras. 
+           I’m passionate about building projects that combine technology and creativity — from 
+           AI-powered apps to full-stack web development.</p>
+
+        <p>Currently, I’m working on projects like an AI-powered security system, LMS platforms, 
+           and data analytics case studies. My long-term goal is to become a Data Scientist 
+           and contribute to solving real-world business problems.</p>
+
+        <p>When I’m not coding, I enjoy exploring new technologies, reading about AI trends, 
+           and learning advanced math concepts.</p>
+
+        <a href="#portfolio" class="btn">See My Work</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <h2>My Projects</h2>
+    <div class="projects">
+
+      <!-- Project 1 -->
+      <div class="project">
+        <a href="https://netflix-clone-ravrkzdo7-aditya-jhas-projects-f2a6a356.vercel.app/" target="_blank">
+          <h3>Netflix Clone</h3>
+          <p>A full-featured Netflix clone built with React and Firebase.</p>
+        </a>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project">
+        <a href="https://aditya2785-ai-job-matcher-app-tx5h5h.streamlit.app/" target="_blank">
+          <h3>AI Job Matcher</h3>
+          <p>An AI-powered app that matches candidates to jobs.</p>
+        </a>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project">
+        <a href="https://gemini-codereviewer.vercel.app/" target="_blank">
+          <h3>AI Code Review</h3>
+          <p>A full-stack web app that leverages AI for code review and suggestions.</p>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <!-- EmailJS Script -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+     (function(){
+        emailjs.init({
+          publicKey: "70jbCPeGJXHAjRBqX",  // your API public key
+        });
+     })();
+  </script>
+
+</body>
+</html>
+
+
+<!-- Services Section -->
+<section id="services">
+  <div class="container">
+    <h2>My Services</h2>
+    <div class="service-cards">
+      
+      <!-- Service 1 -->
+      <div class="service-card">
+        <h3>BDM Capstone Project</h3>
+        <p>
+          Leveraging Data Analytics to Enhance Inventory and Customer Retention 
+          at Duallush Designs. Identified ₹1.2 crore locked in slow-moving 
+          inventory and low customer repeat rates using advanced data-driven 
+          insights.
+        </p>
+        <a href="assets/Final Report .pdf" target="_blank" class="btn">View Report</a>
+      </div>
+
+      <!-- Future Services -->
+      <div class="service-card">
+        <h3>Data Science Solutions</h3>
+        <p>
+          I provide data analysis, visualization, and predictive modeling 
+          solutions to solve real-world business problems.
+        </p>
+        <a href="#contact" class="btn">Hire Me</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>If you’d like to get in touch, feel free to reach out!</p>
+    
+    <div class="contact-container">
+      <div class="contact-info">
+        <p><strong>Email:</strong> 24f2005506@ds.study.iitm.ac.in</p>
+        <p><strong>Location:</strong> New Delhi, India</p>
+      </div>
+
+      <div class="contact-form">
+        <form action="#" method="post">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>

@@ -8,7 +8,6 @@
 
   <link rel="icon" type="image/png" href="images/15396074.webp">
 </head>
-</head>
 <body>
 
   <!-- Navigation -->
@@ -36,21 +35,19 @@
       </p>
       <div class="buttons">
         <a href="#contact" class="btn primary">Hire Me</a>
-
-        <a href="mailto:24f2005506@ds.study.iitm.ac.in" class="btn secondary">Let's Talk</a>
+        <a href="#contact" class="btn secondary">Let's Talk</a>
       </div>
-     <div class="socials">
-  <a href="https://twitter.com/yourusername" target="_blank">
-    <img src="images/twitter-logo-icon-free-png.webp" alt="Twitter">
-  </a>
-  <a href="https://github.com/aditya2785" target="_blank">
-    <img src="images/github-icon-1-logo.webp" alt="GitHub">
-  </a>
-  <a href="" target="_blank">
-    <img src="images/linkedin.png" alt="LinkedIn">
-  </a>
-</div>
-
+      <div class="socials">
+        <a href="https://twitter.com/yourusername" target="_blank">
+          <img src="images/twitter-logo-icon-free-png.webp" alt="Twitter">
+        </a>
+        <a href="https://github.com/aditya2785" target="_blank">
+          <img src="images/github-icon-1-logo.webp" alt="GitHub">
+        </a>
+        <a href="" target="_blank">
+          <img src="images/linkedin.png" alt="LinkedIn">
+        </a>
+      </div>
     </div>
 
     <div class="hero-img">
@@ -58,9 +55,7 @@
     </div>
   </section>
 
-
-
-   <!-- About Section -->
+  <!-- About Section -->
   <section id="about">
     <h2>About Me</h2>
     <div class="about-container">
@@ -83,7 +78,6 @@
       </div>
     </div>
   </section>
-
 
   <!-- Portfolio Section -->
   <section id="portfolio" class="portfolio">
@@ -117,55 +111,37 @@
     </div>
   </section>
 
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <h2>My Services</h2>
+      <div class="service-cards">
+        
+        <!-- Service 1 -->
+        <div class="service-card">
+          <h3>BDM Capstone Project</h3>
+          <p>
+            Leveraging Data Analytics to Enhance Inventory and Customer Retention 
+            at Duallush Designs. Identified ₹1.2 crore locked in slow-moving 
+            inventory and low customer repeat rates using advanced data-driven 
+            insights.
+          </p>
+          <a href="assets/Final Report .pdf" target="_blank" class="btn">View Report</a>
+        </div>
 
+        <!-- Future Services -->
+        <div class="service-card">
+          <h3>Data Science Solutions</h3>
+          <p>
+            I provide data analysis, visualization, and predictive modeling 
+            solutions to solve real-world business problems.
+          </p>
+          <a href="#contact" class="btn">Hire Me</a>
+        </div>
 
-
-  <!-- EmailJS Script -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script type="text/javascript">
-     (function(){
-        emailjs.init({
-          publicKey: "70jbCPeGJXHAjRBqX",  // your API public key
-        });
-     })();
-  </script>
-
-</body>
-</html>
-
-
-<!-- Services Section -->
-<section id="services">
-  <div class="container">
-    <h2>My Services</h2>
-    <div class="service-cards">
-      
-      <!-- Service 1 -->
-      <div class="service-card">
-        <h3>BDM Capstone Project</h3>
-        <p>
-          Leveraging Data Analytics to Enhance Inventory and Customer Retention 
-          at Duallush Designs. Identified ₹1.2 crore locked in slow-moving 
-          inventory and low customer repeat rates using advanced data-driven 
-          insights.
-        </p>
-        <a href="assets/Final Report .pdf" target="_blank" class="btn">View Report</a>
       </div>
-
-      <!-- Future Services -->
-      <div class="service-card">
-        <h3>Data Science Solutions</h3>
-        <p>
-          I provide data analysis, visualization, and predictive modeling 
-          solutions to solve real-world business problems.
-        </p>
-        <a href="#contact" class="btn">Hire Me</a>
-      </div>
-
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Contact Section -->
   <section id="contact">
@@ -175,16 +151,43 @@
     <div class="contact-container">
       <div class="contact-info">
         <p><strong>Email:</strong> 24f2005506@ds.study.iitm.ac.in</p>
-        <p><strong>Location:</strong> New Delhi, India</p>
+        <p><strong>Location:</strong> Chennai, India</p>
       </div>
 
       <div class="contact-form">
-        <form action="#" method="post">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
+        <form id="contact-form">
+          <input type="text" name="from_name" placeholder="Your Name" required>
+          <input type="email" name="from_email" placeholder="Your Email" required>
           <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
           <button type="submit">Send Message</button>
         </form>
       </div>
     </div>
   </section>
+
+  <!-- EmailJS Script -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init({
+        publicKey: "70jbCPeGJXHAjRBqX",  // your API public key
+      });
+    })();
+
+    const form = document.getElementById("contact-form");
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      emailjs.sendForm("service_h5th6z1", "template_avjpbxx", this)
+        .then(() => {
+          alert("✅ Message sent successfully!");
+          form.reset();
+        }, (error) => {
+          alert("❌ Failed to send message. Please try again.");
+          console.log("EmailJS Error:", error);
+        });
+    });
+  </script>
+
+</body>
+</html>

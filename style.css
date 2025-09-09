@@ -343,26 +343,47 @@ body {
 @media (max-width: 768px) {
   /* Navbar */
   .navbar {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
   }
 
   .nav-links {
     flex-direction: column;
-    gap: 10px;
-    padding: 0;
-    margin-top: 10px;
+    position: absolute;
+    top: 70px;
+    right: 5%;
+    background: #112240;
+    padding: 15px;
+    border-radius: 8px;
+    display: none; /* hidden by default */
+  }
+
+  .nav-links.active {
+    display: flex;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .nav-links li {
-    display: block;
+    margin: 10px 0;
   }
 
   /* Hero Section */
   .hero {
     flex-direction: column;
     text-align: center;
-    padding: 20px;
+    padding: 30px 15px;
   }
 
   .hero-text {
@@ -370,10 +391,20 @@ body {
     margin-bottom: 20px;
   }
 
+  .hero-text h1 { font-size: 1.8rem; }
+  .hero-text h2 { font-size: 1.3rem; }
+  .hero-text p { font-size: 1rem; }
+
+  .buttons a {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 18px;
+  }
+
   .hero-img img {
     width: 80%;
-    max-width: 300px;
-    height: auto;
+    max-width: 280px;
+    margin-top: 15px;
   }
 
   /* About Section */
@@ -381,54 +412,69 @@ body {
     flex-direction: column;
     text-align: center;
     gap: 20px;
+    padding: 20px;
   }
 
   .about-image img {
     width: 80%;
-    max-width: 250px;
-    height: auto;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .about-text {
+    text-align: center;
+    font-size: 0.95rem;
   }
 
   /* Projects */
   .projects {
-    display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+    padding: 0 15px;
+  }
+
+  .project a {
+    max-width: 350px;
+    margin: 0 auto;
   }
 
   /* Services */
   .service-cards {
-    display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+    padding: 0 15px;
+  }
+
+  .service-card {
+    max-width: 350px;
+    margin: 0 auto;
+    text-align: center;
   }
 
   /* Contact Section */
   .contact-container {
     flex-direction: column;
     text-align: center;
+    padding: 20px;
   }
 
-  .contact-form form {
-    width: 100%;
+  .contact-info {
+    margin-bottom: 20px;
+  }
+
+  .contact-form input, 
+  .contact-form textarea {
+    font-size: 16px; /* avoid zoom-in issue */
   }
 }
 
 @media (max-width: 480px) {
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  p {
-    font-size: 0.95rem;
-  }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.2rem; }
+  p { font-size: 0.9rem; }
 
   .btn {
     padding: 8px 14px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 }

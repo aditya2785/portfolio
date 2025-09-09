@@ -183,26 +183,40 @@
   </script>
 
   <!-- Hamburger Toggle & Smooth Scroll Script -->
-<script>
-  const hamburger = document.querySelector(".hamburger");
-  const navLinks = document.querySelector(".nav-links");
-  const links = document.querySelectorAll(".nav-links a");
+  <script>
+// Hamburger menu toggle
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
 
-  // Toggle menu on hamburger click
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+// Scroll to section
+const links = document.querySelectorAll(".nav-links a");
+
+links.forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href").substring(1);
+    const targetSection = document.getElementById(targetId);
+
+    if (targetSection) {
+      const headerOffset = document.querySelector('.navbar').offsetHeight;
+      let offsetPosition = targetSection.offsetTop - headerOffset;
+
+      // For #home, scroll a little **below top** to show hero text
+      if(targetId === "home"){
+        offsetPosition += 50; // adjust this value as needed
+      }
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "auto" // change to "smooth" if you want smooth scrolling
+      });
+    }
+
+    // Close mobile menu
+    navLinks.classList.remove("active");
   });
-
-  // Smooth scroll & close menu on link click
-  links.forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute("href").substring(1);
-      const targetSection = document.getElementById(targetId);
-      targetSection.scrollIntoView({ behavior: "smooth" });
-
-      // Close mobile menu after clicking
-      navLinks.classList.remove("active");
-    });
-  });
+});
 </script>
